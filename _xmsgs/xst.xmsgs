@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="76" delta="old" >"C:\data\PROJECT\Door_controller.vhd" Line 51: <arg fmt="%s" index="1">statement</arg> is not synthesizable since it does not hold its value under NOT(clock-edge) condition
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\data\PROJECT\Door_controller.vhd" Line 45: Assignment to <arg fmt="%s" index="1">is_open</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="error" file="HDLCompiler" num="236" delta="new" >"C:\data\PROJECT\Memory.vhd" Line 88: Attribute <arg fmt="%s" index="1">event</arg> on multiple bits is not synthesizable
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:\data\PROJECT\FTG.vhd" Line 63: <arg fmt="%s" index="1">currfloor</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="error" file="HDLCompiler" num="564" delta="old" >"C:\data\PROJECT\FTG.vhd" Line 96: Left range bound is not constant
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\data\PROJECT\main_controller.vhd" Line 263: Assignment to <arg fmt="%s" index="1">done1</arg> ignored, since the identifier is never used
+</msg>
+
+</messages>
+
