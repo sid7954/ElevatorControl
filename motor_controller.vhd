@@ -46,7 +46,7 @@ architecture Behavioral of motor_controller is
 		if reset = '1' then
 			motorUp <= '0';
 			motorDown <= '0';
-		elsif rising_edge(clk) then
+		elsif clk'event and clk='1' then
 			if idle = '1' then
 				motorUp <= '0';
 				motorDown <= '0';

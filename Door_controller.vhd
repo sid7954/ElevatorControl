@@ -44,11 +44,11 @@ signal op_counter : std_logic_vector(8 downto 0) := "000000000";
 begin
 	process(clk,reset)
 	begin
+	if clk'event and clk='1' then
 		if reset = '1' then
 			is_open <= '0'	;
 			op_counter <= "000000000";
 		end if ;
-		if rising_edge(clk) then
 			if state = '1' and op_counter < "111111111" then
 				--op_counter <= op_counter + std_logic_vector(to_signed(to_integer(signed("111111111") / signed(weight)),9));
 				is_open <= '1';

@@ -26,9 +26,14 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="main_controller.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="main_controller.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="main_controller.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="main_controller.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="main_controller.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="main_controller.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="main_controller.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="main_controller.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="main_controller_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="main_controller_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="main_controller_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
@@ -37,12 +42,13 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1458989706" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1458989706">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1458989706" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-8623806647417731401" xil_pn:start_ts="1458989706">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1458989707" xil_pn:in_ck="2640051321838010443" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5972277888833513368" xil_pn:start_ts="1458989706">
+    <transform xil_pn:end_ts="1459261277" xil_pn:in_ck="2640051321838010443" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="5972277888833513368" xil_pn:start_ts="1459261277">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/FIFO.ngc"/>
@@ -64,15 +70,16 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1458991572" xil_pn:in_ck="8986006252338697952" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="275011982662713964" xil_pn:start_ts="1458991554">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1459261310" xil_pn:in_ck="8986006252338697952" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="275011982662713964" xil_pn:start_ts="1459261277">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="main_controller.lso"/>
+      <outfile xil_pn:name="main_controller.ngc"/>
+      <outfile xil_pn:name="main_controller.ngr"/>
       <outfile xil_pn:name="main_controller.prj"/>
+      <outfile xil_pn:name="main_controller.stx"/>
       <outfile xil_pn:name="main_controller.syr"/>
       <outfile xil_pn:name="main_controller.xst"/>
       <outfile xil_pn:name="main_controller_xst.xrpt"/>

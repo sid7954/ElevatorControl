@@ -99,13 +99,13 @@ ARCHITECTURE simulation_arch OF FIFO_synth IS
     SIGNAL rst	                          :   STD_LOGIC;
     SIGNAL wr_en                          :   STD_LOGIC;
     SIGNAL rd_en                          :   STD_LOGIC;
-    SIGNAL din                            :   STD_LOGIC_VECTOR(32-1 DOWNTO 0);
-    SIGNAL dout                           :   STD_LOGIC_VECTOR(32-1 DOWNTO 0);
+    SIGNAL din                            :   STD_LOGIC_VECTOR(12-1 DOWNTO 0);
+    SIGNAL dout                           :   STD_LOGIC_VECTOR(12-1 DOWNTO 0);
     SIGNAL full                           :   STD_LOGIC;
     SIGNAL empty                          :   STD_LOGIC;
    -- TB Signals
-    SIGNAL wr_data                        :   STD_LOGIC_VECTOR(32-1 DOWNTO 0);
-    SIGNAL dout_i                         :   STD_LOGIC_VECTOR(32-1 DOWNTO 0);
+    SIGNAL wr_data                        :   STD_LOGIC_VECTOR(12-1 DOWNTO 0);
+    SIGNAL dout_i                         :   STD_LOGIC_VECTOR(12-1 DOWNTO 0);
     SIGNAL wr_en_i                        :   STD_LOGIC := '0';
     SIGNAL rd_en_i                        :   STD_LOGIC := '0';
     SIGNAL full_i                         :   STD_LOGIC := '0';
@@ -183,8 +183,8 @@ ARCHITECTURE simulation_arch OF FIFO_synth IS
 
     fg_dg_nv: FIFO_dgen
       GENERIC MAP (
-          	C_DIN_WIDTH       => 32,
-		C_DOUT_WIDTH      => 32,
+          	C_DIN_WIDTH       => 12,
+		C_DOUT_WIDTH      => 12,
 		TB_SEED           => TB_SEED, 
  		C_CH_TYPE         => 0	
                  )
@@ -199,8 +199,8 @@ ARCHITECTURE simulation_arch OF FIFO_synth IS
 
    fg_dv_nv: FIFO_dverif
     GENERIC MAP (  
-	       C_DOUT_WIDTH       => 32,
-	       C_DIN_WIDTH        => 32,
+	       C_DOUT_WIDTH       => 12,
+	       C_DIN_WIDTH        => 12,
 	       C_USE_EMBEDDED_REG => 0,
 	       TB_SEED            => TB_SEED, 
  	       C_CH_TYPE          => 0
@@ -219,8 +219,8 @@ ARCHITECTURE simulation_arch OF FIFO_synth IS
     GENERIC MAP ( 
               AXI_CHANNEL         => "Native",
               C_APPLICATION_TYPE  => 0,
-	      C_DOUT_WIDTH        => 32,
-	      C_DIN_WIDTH         => 32,
+	      C_DOUT_WIDTH        => 12,
+	      C_DIN_WIDTH         => 12,
 	      C_WR_PNTR_WIDTH     => 10,
     	      C_RD_PNTR_WIDTH     => 10,
  	      C_CH_TYPE           => 0,

@@ -93,7 +93,10 @@ begin
 		if (fireAlarm = '0') then
 			-- Check for 5 and 0 separately
 			if (currDir = "01") then
-				for i in conv_integer(currFloor+1) to 5 loop
+				for i in 1 to 5 loop
+					if (i < conv_integer(currFloor+1)) then
+						next when true;
+					end if;
 					if (i=5) then
 						if (req(4) = '1') then
 							tmp_newFlr <= "101";
@@ -121,18 +124,22 @@ begin
 				
 				if ((max_flr < currFloor or max_flr = currFloor) and tmp_newFlr = "000") then
 					newFloor <= currFloor;
-					for j in conv_integer(currFloor-1) downto 1 loop
+					for j in 5 downto 1 loop
+						if (j > conv_integer(currFloor-1)) then
+							next when true;
+						else
 						if (j=1) then
 							if (req(5) = '1' or req(0) = '1') then
 								newDir <= "00";
 								exit;
 							end if;
 						end if;
-						if ( j/=1 and (req(2+2*j) = '1' or req(j-1) = '1' or req(3+2*j) = '1')) then
+						if ( j/=1 and ((3+2*j)<13) and (req(2+2*j) = '1' or req(j-1) = '1' or req(3+2*j) = '1')) then
 							newDir <= "00";
 							exit; -- exit the process here;
 						end if;
 						newDir <= "10";	--Default assignment
+						end if;
 					end loop;
 				end if;
 				
@@ -152,7 +159,10 @@ begin
 			min_flr <= currFloor;
 			tmpd_newFlr <= "000";
 			if (currDir = "00") then
-				for i in conv_integer(currFloor-1) downto 1 loop
+				for i in 5 downto 1 loop
+					if (i > conv_integer(currFloor-1)) then
+						next when true;
+					end if;	
 					if (i=1) then
 						if (req(0) = '1') then
 							tmpd_newFlr <= "001";
@@ -164,7 +174,7 @@ begin
 							end if;
 						end if;
 					else
-						if (req(i-1) = '1' or req(3 + 2*i) = '1') then
+						if ((3+2*i)<13 and (req(i-1) = '1' or req(3 + 2*i) = '1')) then
 							tmpd_newFlr <= conv_std_logic_vector(i, tmp_newFlr' length);
 							newDir <= currDir;
 							exit;
@@ -180,7 +190,10 @@ begin
 				
 				if ((min_flr > currFloor or min_flr = currFloor) and tmpd_newFlr = "000") then
 					newFloor <= currFloor;
-					for j in conv_integer(currFloor+1) to 5 loop
+					for j in 1 to 5 loop
+						if ( j < conv_integer(currFloor+1)) then
+							next when true;
+						end if;
 						if (j=5) then
 							if (req(4) = '1' or req(12) = '1') then
 								newDir <= "01";
@@ -209,14 +222,17 @@ begin
 			
 			if (currDir  = "10") then
 				--Check in floors below for a high request
-				for i in 1 to conv_integer(currFloor-1) loop
+				for i in 1 to 5 loop
+					if ( i > conv_integer(currFloor-1)) then
+						next when true;
+					end if;	
 					if (i = 1 and (req(0) = '1' or req(5) = '1')) then
 						newFloor <= "001";
 						newDir <= "00";
 						flag := '1';
 						exit;
 					else
-						if (i/=1 and (req(i-1) = '1' or req(2+2*i) = '1' or req(3+2*i) = '1')) then
+						if (i/=1 and (3+2*i)<13 and (req(i-1) = '1' or req(2+2*i) = '1' or req(3+2*i) = '1')) then
 							newFloor <= conv_std_logic_vector(i, newFloor'length);
 							newDir <= "00";
 							flag := '1';
@@ -227,7 +243,10 @@ begin
 				
 				-- Check in floors above for a high request
 				if (flag = '0') then
-				for i in conv_integer(currFloor+1) to 5 loop
+				for i in 1 to 5 loop
+					if ( i < conv_integer(currFloor+1)) then
+						next when true;
+					end if;
 					if (i = 5 and (req(4) = '1' or req(12) = '1')) then
 						newFloor <= "101";
 						newDir <= "01";
@@ -251,3 +270,4 @@ begin
 end process FindNextValues;
 
 end Behavioral;
+

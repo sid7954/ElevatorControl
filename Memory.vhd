@@ -46,10 +46,10 @@ COMPONENT FIFO
 			PORT (
 			clk : IN STD_LOGIC;
 			 rst : IN STD_LOGIC;
-			 din : IN STD_LOGIC_VECTOR ( 31 downto 0 );
+			 din : IN STD_LOGIC_VECTOR ( 11 downto 0 );
 			 wr_en : IN STD_LOGIC;
 			 rd_en : IN STD_LOGIC;
-			 dout : OUT STD_LOGIC_VECTOR ( 31 downto 0 );
+			 dout : OUT STD_LOGIC_VECTOR ( 11 downto 0 );
 			 full : OUT STD_LOGIC;
 			 empty : OUT STD_LOGIC
 		  );
@@ -58,9 +58,9 @@ END COMPONENT;
 signal write_enable : STD_LOGIC;
 signal prev_floor : STD_LOGIC_VECTOR ( 2 downto 0 );
 signal temp_energy : STD_LOGIC_VECTOR ( 9 downto 0 );
-signal write_data : STD_LOGIC_VECTOR ( 31 downto 0 );
+signal write_data : STD_LOGIC_VECTOR ( 11 downto 0 );
 signal rd_en : STD_LOGIC;
-signal dout : STD_LOGIC_VECTOR ( 31 downto 0 );
+signal dout : STD_LOGIC_VECTOR ( 11 downto 0 );
 
 begin
 	
@@ -74,7 +74,7 @@ begin
 			dout => dout
 		);
 	
-	process(clk)
+	process(clk,curr_floor,reset)
 	begin
 		if clk' event and clk = '1' then
 			if reset = '0' then
@@ -84,9 +84,7 @@ begin
 					energy <= temp_energy;
 				end if;
 				
-				
-				if curr_floor' event then
-					
+									
 					if prev_floor < curr_floor then
 						temp_energy <= temp_energy + "0000000011";
 					else
@@ -95,8 +93,6 @@ begin
 				
 					write_enable <= '1';
 					write_data <= curr_floor & weight;
-					
-				end if;
 			else
 				write_enable <= '0';
 				temp_energy <= "0000000000";
