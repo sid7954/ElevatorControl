@@ -19,7 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.NUMERIC_STD.ALL;
+--USE IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -50,7 +51,7 @@ begin
 			op_counter <= "000000000";
 		end if ;
 			if state = '1' and op_counter < "111111111" then
-				--op_counter <= op_counter + std_logic_vector(to_signed(to_integer(signed("111111111") / signed(weight)),9));
+				op_counter <= op_counter + "000011111";
 				is_open <= '1';
 				done <= '0';
 			elsif state = '1' and op_counter >= "111111111" then

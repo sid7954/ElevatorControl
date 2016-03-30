@@ -40,8 +40,8 @@ entity FTG is
 		currFloor : in std_logic_vector(2 downto 0);
 		currDir : in std_logic_vector(1 downto 0);
 		req : in std_logic_vector(12 downto 0);
-		newFloor : out std_logic_vector(2 downto 0);
-		newDir : out std_logic_vector(1 downto 0)
+		newFloor : inout std_logic_vector(2 downto 0);
+		newDir : inout std_logic_vector(1 downto 0)
 		);
 end FTG;
 

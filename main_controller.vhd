@@ -38,8 +38,8 @@ Port (
 		req : in std_logic_vector(12 downto 0);
 		weight : in std_logic_vector(8 downto 0);
 		floor_sensor : in std_logic_vector (9 downto 0);
-		currFloor : inout std_logic_vector(2 downto 0);
-		currDir : inout std_logic_vector(1 downto 0);
+		currFloor : out std_logic_vector(2 downto 0);
+		currDir : out std_logic_vector(1 downto 0);
 		motorUp: out std_logic;
 		motorDown: out std_logic;
 		energy: out std_logic_vector(9 downto 0)
@@ -82,13 +82,16 @@ PORT(
 		currFloor : in std_logic_vector(2 downto 0);
 		currDir : in std_logic_vector(1 downto 0);
 		req : in std_logic_vector(12 downto 0);
-		newFloor : out std_logic_vector(2 downto 0);
-		newDir : out std_logic_vector(1 downto 0)
+		newFloor : inout std_logic_vector(2 downto 0);
+		newDir : inout std_logic_vector(1 downto 0)
 		);
 end component;
 
-signal newFloor : std_logic_vector(2 downto 0):= "000";
-signal newDir : std_logic_vector(1 downto 0) := "00";
+signal newFloor : std_logic_vector(2 downto 0):= "001";
+signal newDir : std_logic_vector(1 downto 0) := "10";
+signal tempDir : std_logic_vector(1 downto 0) := "10";
+signal tempCurrFloor : std_logic_vector(2 downto 0) := "001";
+signal tempCurrDir : std_logic_vector(1 downto 0) := "10";
 signal motorcontrollerdone : std_logic := '1';
 signal state1 : std_logic := '0';
 signal done1 : std_logic := '1';
@@ -103,8 +106,8 @@ signal done5 : std_logic := '1';
 --Architecture of main_controller begins
 begin
 	motor_contoller1 : motor_controller PORT MAP(
-		  idle => currDir(0),
-		  dirBit => currDir(1),
+		  idle => tempDir(0),
+		  dirBit => tempDir(1),
 		  motorUp => motorUp,
 		  motorDown => motorDown,
 		  clk => clk,
@@ -150,117 +153,133 @@ begin
 			reset=>reset,
 			energy=>energy,
 			weight=> weight,
-			curr_floor=>currFloor
+			curr_floor=>tempCurrFloor
 	);
 	FTG1 : FTG PORT MAP (
 			clk=>clk,
 			reset=>reset,
 			fireAlarm => fireAlarm,
-			currFloor=> currFloor,
-			currDir=> currDir,
+			currFloor=> tempCurrFloor,
+			currDir=> tempCurrDir,
 			req => req,
 			newFloor=>newFloor,
 			newDir=>newDir
 	);
 	
-	currDir_currFloor_update: process (clk,reset,floor_sensor, newDir)
+	currDir_currFloor_update: process (clk,reset,floor_sensor, newDir, newFloor)
 	begin
 		if reset='1' then
-			currDir <= "00";
+			tempCurrDir <= "10";
+			currDir <= "10";
 		elsif rising_edge(clk)then
 			if newDir= "10" or newDir="11" then
 				--lift does not have to change floor
+				tempCurrDir <= "10";
 				currDir <= "10";
 				motorcontrollerdone <= '1';
 			elsif newDir="00" then
+				tempCurrDir <= "00";
+				currDir <= "00";
 				--lift has to go down (here lift cannot be currently on the 1st floor )
-				if currFloor="010" then
+				if tempCurrFloor="010" then
 					--if lift was currently at 2nd floor
 					if (floor_sensor(0)='1' and floor_sensor(1)='1') then
 						--if the lift reaches the 1st floor, change the current direction to idle
-						currDir<="10";
+						tempDir<="10";
 						currFloor<= "001";
+						tempCurrFloor <= "001";
 						motorcontrollerdone <= '1';
 					else 
 						--else currDir is down, the motor controller keeps on going down
-						currDir<="00";
+						tempDir<="00";
 						motorcontrollerdone <= '0';
 					end if;
-				elsif currFloor="011" then
+				elsif tempCurrFloor="011" then
 					if (floor_sensor(2)='1' and floor_sensor(3)='1') then
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <= "010";
 						currFloor<= "010";
 						motorcontrollerdone <= '1';
 					else 
-						currDir<="00";
+						tempDir<="00";
 						motorcontrollerdone <= '0';
 					end if;
-				elsif currFloor="100" then
+				elsif tempCurrFloor="100" then
 					if (floor_sensor(4)='1' and floor_sensor(5)='1') then
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <= "011";
 						currFloor<= "011";
 						motorcontrollerdone <= '1';
 					else 
-						currDir<="00";
+						tempDir<="00";
 						motorcontrollerdone <= '0';
 					end if;
-				elsif currFloor="101" then
+				elsif tempCurrFloor="101" then
 					if (floor_sensor(6)='1' and floor_sensor(7)='1') then
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <= "100";
 						currFloor<= "100";
 						motorcontrollerdone <= '1';
 					else 
-						currDir<="00";
+						tempDir<="00";
 						motorcontrollerdone <= '0';
 					end if;
 				end if;
 			elsif newDir="01" then
+				tempCurrDir <= "01";
+				currDir <= "01";
 			--lift has to go up (here lift cannot be currently on the 5th floor )
-				if currFloor="001" then
+				if tempCurrFloor="001" then
 					--if lift was currently at 1st floor
-					if (floor_sensor(1)='1' and floor_sensor(2)='1') then
+					if (floor_sensor(3)='1' and floor_sensor(2)='1') then
 						--if the lift reaches the 2nd floor, change the current direction to idle
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <= "010";
 						currFloor<= "010";
 						motorcontrollerdone <= '1';
 					else 
 						--else currDir is down, the motor controller keeps on going up
-						currDir<="01";
+						tempDir<="01";
 						motorcontrollerdone <= '0';
 					end if;
-				elsif currFloor="010" then
+				elsif tempCurrFloor="010" then
 					if (floor_sensor(4)='1' and floor_sensor(5)='1') then
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <= "011";
 						currFloor<= "011";
 						motorcontrollerdone <= '1';
 					else 
-						currDir<="01";
+						tempDir<="01";
 						motorcontrollerdone <= '0';
 					end if;
-				elsif currFloor="011" then
+				elsif tempCurrFloor="011" then
 					if (floor_sensor(6)='1' and floor_sensor(7)='1') then
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <= "100";
 						currFloor<= "100";
 						motorcontrollerdone <= '1';
 					else 
-						currDir<="01";
+						tempDir<="01";
 						motorcontrollerdone <= '0';
 					end if;
-				elsif currFloor="100" then
+				elsif tempCurrFloor="100" then
 					if (floor_sensor(8)='1' and floor_sensor(9)='1') then
-						currDir<="10";
+						tempDir<="10";
+						tempCurrFloor <="101";
 						currFloor<= "101";
 						motorcontrollerdone <= '1';
 					else 
-						currDir<="01";
+						tempDir<="01";
 						motorcontrollerdone <= '0';
 					end if;
 				end if;
 			end if;
 		end if;
-	end process;	
+		currFloor<=tempCurrFloor;
+		currDir<=tempCurrDir;
+	end process currDir_currFloor_update;	
 	
-	Dooropening : process (clk,reset,motorcontrollerdone,currFloor)
+	Dooropening : process (clk,reset,motorcontrollerdone,tempCurrFloor)
 	begin
 		if reset ='1' then
 			state1<='0';
@@ -275,37 +294,37 @@ begin
 			done5<='1';
 		elsif rising_edge(clk)then
 			if motorcontrollerdone ='1' then
-				if currFloor = newFloor then
+				if tempCurrFloor = newFloor then
 					--door needs to openend
-					if currFloor = "001" then
+					if tempCurrFloor = "001" then
 						--door on 1st floor need to be opened
 						state1 <='1';
 						state2 <='0';
 						state3 <='0';
 						state4 <='0';
 						state5 <='0';
-					elsif currFloor = "010" then
+					elsif tempCurrFloor = "010" then
 						--door on 2nd floor need to be opened
 						state1 <='0';
 						state2 <='1';
 						state3 <='0';
 						state4 <='0';
 						state5 <='0';
-					elsif currFloor = "011" then
+					elsif tempCurrFloor = "011" then
 						--door on 3rd floor need to be opened
 						state1 <='0';
 						state2 <='0';
 						state3 <='1';
 						state4 <='0';
 						state5 <='0';
-					elsif currFloor = "100" then
+					elsif tempCurrFloor = "100" then
 						--door on 4th floor need to be opened
 						state1 <='0';
 						state2 <='0';
 						state3 <='0';
 						state4 <='1';
 						state5 <='0';
-					elsif currFloor = "101" then
+					elsif tempCurrFloor = "101" then
 						--door on 5th floor need to be opened
 						state1 <='0';
 						state2 <='0';
@@ -324,5 +343,5 @@ begin
 				end if;
 			end if;
 		end if;
-	end process;
+	end process Dooropening;
 end Behavioral;
