@@ -49,16 +49,22 @@ begin
 		if reset = '1' then
 			is_open <= '0'	;
 			op_counter <= "000000000";
+			done<='1';
 		end if ;
 			if state = '1' and op_counter < "111111111" then
 				op_counter <= op_counter + "000011111";
+<<<<<<< HEAD
+=======
 				is_open <= '1';
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 				done <= '0';
+				is_open <= '1';
 			elsif state = '1' and op_counter >= "111111111" then
 				is_open <= '0';
 				done <= '1';
 			elsif state = '0' then
 				done <= '1';
+				
 			end if;
 	end if;	
 	end process;

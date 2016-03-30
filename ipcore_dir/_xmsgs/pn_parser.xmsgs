@@ -8,7 +8,11 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<<<<<<< HEAD
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Sunidhi/Desktop/ElevatorControl/ipcore_dir/FIFO.vhd&quot; into library work</arg>
+=======
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/aviral/CS 254 Proj/ElevatorControl/ipcore_dir/FIFO.vhd&quot; into library work</arg>
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 </msg>
 
 </messages>

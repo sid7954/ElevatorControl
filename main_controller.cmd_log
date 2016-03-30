@@ -11,3 +11,20 @@ xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller
 xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
 xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
 xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+<<<<<<< HEAD
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xa7a100t-csg324-2I "main_controller.ngc" main_controller.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o main_controller_map.ncd main_controller.ngd main_controller.pcf 
+par -w -intstyle ise -ol high -mt off main_controller_map.ncd main_controller.ncd main_controller.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml main_controller.twx main_controller.ncd -o main_controller.twr main_controller.pcf 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+xst -intstyle ise -ifn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.xst" -ofn "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.syr" 
+=======
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868

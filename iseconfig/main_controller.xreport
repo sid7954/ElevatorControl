@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
+<<<<<<< HEAD
+  <DateModified>2016-03-31T02:13:46</DateModified>
+  <ModuleName>main_controller</ModuleName>
+  <SummaryTimeStamp>2016-03-30T11:04:51</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/Sunidhi/Desktop/ElevatorControl/iseconfig/main_controller.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Sunidhi/Desktop/ElevatorControl\</ImplementationReportsDirectory>
+=======
   <DateModified>2016-03-29T19:40:04</DateModified>
   <ModuleName>main_controller</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/aviral/CS 254 Proj/ElevatorControl/iseconfig/main_controller.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/aviral/CS 254 Proj/ElevatorControl</ImplementationReportsDirectory>
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
   <DateInitialized>2016-03-29T19:40:04</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -4,15 +4,25 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
+<<<<<<< HEAD
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+=======
 Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.05 secs
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
  
 --> 
 Parameter xsthdpdir set to xst
 
 
+<<<<<<< HEAD
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+=======
 Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.05 secs
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
  
 --> 
 Reading design: main_controller.prj
@@ -139,7 +149,11 @@ Elaborating entity <main_controller> (architecture <Behavioral>) from library <w
 Elaborating entity <motor_controller> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Door_controller> (architecture <Behavioral>) from library <work>.
+<<<<<<< HEAD
+WARNING:HDLCompiler:1127 - "/home/aviral/CS 254 Proj/ElevatorControl/Door_controller.vhd" Line 46: Assignment to is_open ignored, since the identifier is never used
+=======
 WARNING:HDLCompiler:1127 - "/home/aviral/CS 254 Proj/ElevatorControl/Door_controller.vhd" Line 45: Assignment to is_open ignored, since the identifier is never used
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 Elaborating entity <Memory> (architecture <Behavioral>) from library <work>.
 
@@ -148,12 +162,17 @@ WARNING:HDLCompiler:634 - "/home/aviral/CS 254 Proj/ElevatorControl/Memory.vhd" 
 
 Elaborating entity <FTG> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "/home/aviral/CS 254 Proj/ElevatorControl/FTG.vhd" Line 63: currfloor should be on the sensitivity list of the process
+<<<<<<< HEAD
+WARNING:HDLCompiler:92 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" Line 376: tempcurrfloor should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" Line 377: tempcurrdir should be on the sensitivity list of the process
+=======
 WARNING:HDLCompiler:1127 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" Line 263: Assignment to done1 ignored, since the identifier is never used
 WARNING:Xst:2972 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 113. All outputs of instance <door1> of block <Door_controller> are unconnected in block <main_controller>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 120. All outputs of instance <door2> of block <Door_controller> are unconnected in block <main_controller>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 127. All outputs of instance <door3> of block <Door_controller> are unconnected in block <main_controller>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 134. All outputs of instance <door4> of block <Door_controller> are unconnected in block <main_controller>. Underlying logic will be removed.
 WARNING:Xst:2972 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 141. All outputs of instance <door5> of block <Door_controller> are unconnected in block <main_controller>. Underlying logic will be removed.
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -161,6 +180,45 @@ WARNING:Xst:2972 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd
 
 Synthesizing Unit <main_controller>.
     Related source file is "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd".
+<<<<<<< HEAD
+    Found 13-bit register for signal <tempReq>.
+    Found 2-bit register for signal <tempCurrDir>.
+    Found 1-bit register for signal <state1>.
+    Found 1-bit register for signal <state2>.
+    Found 1-bit register for signal <state3>.
+    Found 1-bit register for signal <state4>.
+    Found 1-bit register for signal <state5>.
+    Found 1-bit register for signal <flag>.
+    Found 2-bit register for signal <tempDir>.
+    Found 3-bit register for signal <newFloorStored>.
+    Found 1-bit register for signal <motorcontrollerdone>.
+    Found 3-bit register for signal <tempCurrFloor>.
+    Found 2-bit register for signal <counter>.
+    Found finite state machine <FSM_0> for signal <tempCurrFloor>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 71                                             |
+    | Inputs             | 20                                             |
+    | Outputs            | 10                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 001                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <counter[1]_GND_5_o_add_137_OUT> created at line 372.
+    Found 1-bit 6-to-1 multiplexer for signal <flag_flag_MUX_143_o> created at line 234.
+    Found 1-bit 7-to-1 multiplexer for signal <flag_flag_MUX_167_o> created at line 302.
+    Found 3-bit comparator equal for signal <tempCurrFloor[2]_newFloor[2]_equal_13_o> created at line 225
+    Found 3-bit comparator equal for signal <tempCurrFloor[2]_newFloorStored[2]_equal_155_o> created at line 390
+INFO:Xst:2774 - HDL ADVISOR - KEEP property attached to signal newDir may hinder XST clustering optimizations.
+INFO:Xst:2774 - HDL ADVISOR - KEEP property attached to signal newFloor may hinder XST clustering optimizations.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  66 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+=======
 INFO:Xst:3210 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 113: Output port <done> of the instance <door1> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 120: Output port <done> of the instance <door2> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" line 127: Output port <done> of the instance <door3> is unconnected or connected to loadless signal.
@@ -169,6 +227,7 @@ INFO:Xst:3210 - "/home/aviral/CS 254 Proj/ElevatorControl/main_controller.vhd" l
     Found 2-bit register for signal <currDir>.
     Summary:
 	inferred   2 D-type flip-flop(s).
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 Unit <main_controller> synthesized.
 
 Synthesizing Unit <motor_controller>.
@@ -180,6 +239,22 @@ Synthesizing Unit <motor_controller>.
 	inferred   2 Multiplexer(s).
 Unit <motor_controller> synthesized.
 
+<<<<<<< HEAD
+Synthesizing Unit <Door_controller>.
+    Related source file is "/home/aviral/CS 254 Proj/ElevatorControl/Door_controller.vhd".
+WARNING:Xst:647 - Input <weight> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 9-bit register for signal <op_counter>.
+    Found 1-bit register for signal <done>.
+    Found 9-bit adder for signal <op_counter[8]_GND_7_o_add_2_OUT> created at line 55.
+    Found 9-bit comparator greater for signal <op_counter[8]_PWR_7_o_LessThan_2_o> created at line 54
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <Door_controller> synthesized.
+
+=======
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 Synthesizing Unit <Memory>.
     Related source file is "/home/aviral/CS 254 Proj/ElevatorControl/Memory.vhd".
 INFO:Xst:3210 - "/home/aviral/CS 254 Proj/ElevatorControl/Memory.vhd" line 67: Output port <dout> of the instance <Memory_FiFo> is unconnected or connected to loadless signal.
@@ -244,13 +319,48 @@ WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and l
 	inferred   2 Adder/Subtractor(s).
 	inferred  18 D-type flip-flop(s).
 	inferred  24 Comparator(s).
+<<<<<<< HEAD
+	inferred 241 Multiplexer(s).
+=======
 	inferred 233 Multiplexer(s).
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 Unit <FTG> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
+<<<<<<< HEAD
+# Adders/Subtractors                                   : 9
+ 10-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
+ 3-bit subtractor                                      : 1
+ 9-bit adder                                           : 5
+# Registers                                            : 36
+ 1-bit register                                        : 16
+ 10-bit register                                       : 2
+ 12-bit register                                       : 1
+ 13-bit register                                       : 1
+ 2-bit register                                        : 4
+ 3-bit register                                        : 7
+ 9-bit register                                        : 5
+# Comparators                                          : 32
+ 3-bit comparator equal                                : 4
+ 3-bit comparator greater                              : 23
+ 9-bit comparator greater                              : 5
+# Multiplexers                                         : 310
+ 1-bit 2-to-1 multiplexer                              : 60
+ 1-bit 6-to-1 multiplexer                              : 1
+ 1-bit 7-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 1
+ 13-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 147
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 96
+ 3-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+=======
 # Adders/Subtractors                                   : 3
  10-bit adder                                          : 1
  3-bit adder                                           : 1
@@ -271,6 +381,7 @@ Macro Statistics
  2-bit 4-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 89
  3-bit 4-to-1 multiplexer                              : 1
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 =========================================================================
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -284,6 +395,12 @@ Loading device for application Rf_Device from file '7a100t.nph' in environment /
 Reading core <ipcore_dir/FIFO.ngc>.
 Loading core <FIFO> for timing and area information for instance <Memory_FiFo>.
 Loading device for application Rf_Device from file '7a100t.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
+<<<<<<< HEAD
+
+Synthesizing (advanced) Unit <Door_controller>.
+The following registers are absorbed into accumulator <op_counter>: 1 register on signal <op_counter>.
+Unit <Door_controller> synthesized (advanced).
+=======
 WARNING:Xst:1710 - FF/Latch <prev_floor_0> (without init value) has a constant value of 1 in block <Memory1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prev_floor_1> (without init value) has a constant value of 1 in block <Memory1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prev_floor_2> (without init value) has a constant value of 1 in block <Memory1>. This FF/Latch will be trimmed during the optimization process.
@@ -291,11 +408,19 @@ WARNING:Xst:1710 - FF/Latch <write_data_9> (without init value) has a constant v
 WARNING:Xst:1710 - FF/Latch <write_data_10> (without init value) has a constant value of 1 in block <Memory1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <write_data_11> (without init value) has a constant value of 1 in block <Memory1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <currDir_0> (without init value) has a constant value of 0 in block <main_controller>. This FF/Latch will be trimmed during the optimization process.
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 Synthesizing (advanced) Unit <Memory>.
 The following registers are absorbed into accumulator <temp_energy>: 1 register on signal <temp_energy>.
 Unit <Memory> synthesized (advanced).
 
+<<<<<<< HEAD
+Synthesizing (advanced) Unit <main_controller>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <main_controller> synthesized (advanced).
+
+=======
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -303,6 +428,29 @@ Macro Statistics
 # Adders/Subtractors                                   : 2
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
+<<<<<<< HEAD
+# Counters                                             : 1
+ 2-bit up counter                                      : 1
+# Accumulators                                         : 6
+ 10-bit up accumulator                                 : 1
+ 9-bit up accumulator                                  : 5
+# Registers                                            : 78
+ Flip-Flops                                            : 78
+# Comparators                                          : 32
+ 3-bit comparator equal                                : 4
+ 3-bit comparator greater                              : 23
+ 9-bit comparator greater                              : 5
+# Multiplexers                                         : 309
+ 1-bit 2-to-1 multiplexer                              : 60
+ 1-bit 6-to-1 multiplexer                              : 1
+ 1-bit 7-to-1 multiplexer                              : 1
+ 13-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 147
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 96
+ 3-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+=======
 # Accumulators                                         : 1
  10-bit up accumulator                                 : 1
 # Registers                                            : 48
@@ -316,12 +464,33 @@ Macro Statistics
  2-bit 4-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 89
  3-bit 4-to-1 multiplexer                              : 1
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+<<<<<<< HEAD
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <tempCurrFloor[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 000
+ 010   | 001
+ 011   | 011
+ 100   | 010
+ 101   | 110
+-------------------
+
+Optimizing unit <main_controller> ...
+
+Optimizing unit <Memory> ...
+
+Optimizing unit <FTG> ...
+
+=======
 WARNING:Xst:1710 - FF/Latch <currDir_0> (without init value) has a constant value of 0 in block <main_controller>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <write_data_9> in Unit <Memory> is equivalent to the following 2 FFs/Latches, which will be removed : <write_data_10> <write_data_11> 
 INFO:Xst:2261 - The FF/Latch <prev_floor_0> in Unit <Memory> is equivalent to the following 2 FFs/Latches, which will be removed : <prev_floor_1> <prev_floor_2> 
@@ -346,6 +515,7 @@ WARNING:Xst:2677 - Node <FTG1/newFloor_1> of sequential type is unconnected in b
 WARNING:Xst:2677 - Node <FTG1/newFloor_0> of sequential type is unconnected in block <main_controller>.
 WARNING:Xst:2677 - Node <FTG1/newDir_0> of sequential type is unconnected in block <main_controller>.
 
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block main_controller, actual ratio is 0.
@@ -355,6 +525,10 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <Memory1/Memory_FiFo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <Memory1/Memory_FiFo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <Memory1/Memory_FiFo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+<<<<<<< HEAD
+FlipFlop tempCurrFloor_FSM_FFd1 has been replicated 1 time(s)
+=======
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 Final Macro Processing ...
 
@@ -362,8 +536,13 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
+<<<<<<< HEAD
+# Registers                                            : 139
+ Flip-Flops                                            : 139
+=======
 # Registers                                            : 39
  Flip-Flops                                            : 39
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 =========================================================================
 
@@ -386,6 +565,29 @@ Top Level Output File Name         : main_controller.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
+<<<<<<< HEAD
+# BELS                             : 457
+#      GND                         : 3
+#      INV                         : 11
+#      LUT2                        : 47
+#      LUT3                        : 58
+#      LUT4                        : 74
+#      LUT5                        : 90
+#      LUT6                        : 143
+#      MUXCY                       : 25
+#      MUXF7                       : 4
+#      VCC                         : 2
+# FlipFlops/Latches                : 203
+#      FD                          : 21
+#      FDC                         : 16
+#      FDCE                        : 51
+#      FDE                         : 25
+#      FDP                         : 13
+#      FDPE                        : 2
+#      FDR                         : 14
+#      FDRE                        : 60
+#      FDSE                        : 1
+=======
 # BELS                             : 129
 #      GND                         : 3
 #      INV                         : 7
@@ -406,12 +608,18 @@ Primitive and Black Box Usage:
 #      FDR                         : 10
 #      FDRE                        : 13
 #      FDSE                        : 2
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 # RAMS                             : 1
 #      RAMB18E1                    : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
+<<<<<<< HEAD
+# IO Buffers                       : 51
+#      IBUF                        : 34
+=======
 # IO Buffers                       : 41
 #      IBUF                        : 24
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 #      OBUF                        : 17
 
 Device utilization summary:
@@ -421,6 +629,22 @@ Selected Device : xa7a100tcsg324-2i
 
 
 Slice Logic Utilization: 
+<<<<<<< HEAD
+ Number of Slice Registers:             203  out of  126800     0%  
+ Number of Slice LUTs:                  423  out of  63400     0%  
+    Number used as Logic:               423  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    489
+   Number with an unused Flip Flop:     286  out of    489    58%  
+   Number with an unused LUT:            66  out of    489    13%  
+   Number of fully used LUT-FF pairs:   137  out of    489    28%  
+   Number of unique control sets:        29
+
+IO Utilization: 
+ Number of IOs:                          52
+ Number of bonded IOBs:                  52  out of    210    24%  
+=======
  Number of Slice Registers:             103  out of  126800     0%  
  Number of Slice LUTs:                   99  out of  63400     0%  
     Number used as Logic:                99  out of  63400     0%  
@@ -435,6 +659,7 @@ Slice Logic Distribution:
 IO Utilization: 
  Number of IOs:                          52
  Number of bonded IOBs:                  42  out of    210    20%  
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    135     0%  
@@ -462,7 +687,11 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
+<<<<<<< HEAD
+clk                                | BUFGP                  | 204   |
+=======
 clk                                | BUFGP                  | 104   |
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -473,9 +702,15 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
+<<<<<<< HEAD
+   Minimum period: 3.972ns (Maximum Frequency: 251.759MHz)
+   Minimum input arrival time before clock: 3.203ns
+   Maximum output required time after clock: 1.641ns
+=======
    Minimum period: 2.316ns (Maximum Frequency: 431.732MHz)
    Minimum input arrival time before clock: 3.316ns
    Maximum output required time after clock: 0.761ns
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -484,6 +719,76 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
+<<<<<<< HEAD
+  Clock period: 3.972ns (frequency: 251.759MHz)
+  Total number of paths / destination ports: 5535 / 452
+-------------------------------------------------------------------------
+Delay:               3.972ns (Levels of Logic = 6)
+  Source:            tempReq_1 (FF)
+  Destination:       FTG1/newFloor_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: tempReq_1 to FTG1/newFloor_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.361   0.610  tempReq_1 (tempReq_1)
+     LUT3:I0->O            7   0.097   0.777  FTG1/req[1]_req[7]_OR_47_o1 (FTG1/req[1]_req[7]_OR_47_o)
+     LUT6:I1->O            9   0.097   0.484  FTG1/req[0]_req[3]_OR_54_o1 (FTG1/req[0]_req[3]_OR_54_o1)
+     LUT6:I4->O            1   0.097   0.355  FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT4221 (FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT422)
+     LUT5:I4->O            1   0.097   0.439  FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT43 (FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT43)
+     LUT6:I4->O            1   0.097   0.355  FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT44 (FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT44)
+     LUT5:I4->O            1   0.097   0.000  FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT417 (FTG1/newFloor[2]_newFloor[2]_mux_197_OUT<0>)
+     FDE:D                     0.008          FTG1/newFloor_0
+    ----------------------------------------
+    Total                      3.972ns (0.951ns logic, 3.021ns route)
+                                       (23.9% logic, 76.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 364 / 178
+-------------------------------------------------------------------------
+Offset:              3.203ns (Levels of Logic = 6)
+  Source:            floor_sensor<9> (PAD)
+  Destination:       newFloorStored_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: floor_sensor<9> to newFloorStored_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.001   0.766  floor_sensor_9_IBUF (floor_sensor_9_IBUF)
+     LUT5:I0->O            1   0.097   0.355  _n0764_inv2 (_n0764_inv2)
+     LUT6:I5->O            1   0.097   0.439  _n0764_inv4 (_n0764_inv4)
+     LUT4:I2->O            1   0.097   0.355  _n0764_inv8_SW0 (N86)
+     LUT6:I5->O            1   0.097   0.355  _n0764_inv8 (_n0764_inv8)
+     LUT6:I5->O            3   0.097   0.351  _n0764_inv11 (_n0764_inv)
+     FDE:CE                    0.095          newFloorStored_0
+    ----------------------------------------
+    Total                      3.203ns (0.581ns logic, 2.622ns route)
+                                       (18.1% logic, 81.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 21 / 17
+-------------------------------------------------------------------------
+Offset:              1.641ns (Levels of Logic = 2)
+  Source:            tempCurrFloor_FSM_FFd3 (FF)
+  Destination:       currFloor<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: tempCurrFloor_FSM_FFd3 to currFloor<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q             105   0.361   0.714  tempCurrFloor_FSM_FFd3 (tempCurrFloor_FSM_FFd3)
+     LUT3:I0->O           33   0.097   0.469  tempCurrFloor_tempCurrFloor[2]1 (FTG1/Mmux_newFloor[2]_newFloor[2]_mux_197_OUT41)
+     OBUF:I->O                 0.000          currFloor_2_OBUF (currFloor<2>)
+    ----------------------------------------
+    Total                      1.641ns (0.458ns logic, 1.183ns route)
+                                       (27.9% logic, 72.1% route)
+=======
   Clock period: 2.316ns (frequency: 431.732MHz)
   Total number of paths / destination ports: 639 / 235
 -------------------------------------------------------------------------
@@ -552,6 +857,7 @@ Offset:              0.761ns (Levels of Logic = 1)
     ----------------------------------------
     Total                      0.761ns (0.361ns logic, 0.400ns route)
                                        (47.4% logic, 52.6% route)
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
 =========================================================================
 
@@ -563,21 +869,38 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
+<<<<<<< HEAD
+clk            |    3.972|         |         |         |
+=======
 clk            |    2.316|         |         |         |
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
+<<<<<<< HEAD
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 33.38 secs
+=======
 Total REAL time to Xst completion: 32.00 secs
 Total CPU time to Xst completion: 30.91 secs
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
  
 --> 
 
 
+<<<<<<< HEAD
+Total memory usage is 864440 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+=======
 Total memory usage is 863564 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   34 (   0 filtered)
 Number of infos    :   18 (   0 filtered)
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 

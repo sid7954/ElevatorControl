@@ -1,0 +1,37 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Sunidhi/Desktop/ElevatorControl/bench6_isim_beh.exe -prj C:/Users/Sunidhi/Desktop/ElevatorControl/bench6_beh.prj work.bench6 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/ipcore_dir/FIFO.vhd" into library work
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/motor_controller.vhd" into library work
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/Memory.vhd" into library work
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/FTG.vhd" into library work
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/Door_controller.vhd" into library work
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/main_controller.vhd" into library work
+Parsing VHDL file "C:/Users/Sunidhi/Desktop/ElevatorControl/bench6.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1242 - "N:/P.20131013/rtf/vhdl/src/ieee/std_logic_arith.vhd" Line 2278: Warning: "There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es)."
+WARNING:HDLCompiler:1242 - "N:/P.20131013/rtf/vhdl/src/ieee/std_logic_arith.vhd" Line 2281: Warning: "CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0."
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity motor_controller [motor_controller_default]
+Compiling architecture behavioral of entity Door_controller [door_controller_default]
+Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_ss [\fifo_generator_v9_3_bhv_ss(10,1...]
+Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(1,0,10...]
+Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,10,"Bla...]
+Compiling architecture fifo_a of entity FIFO [fifo_default]
+Compiling architecture behavioral of entity Memory [memory_default]
+Compiling architecture behavioral of entity FTG [ftg_default]
+Compiling architecture behavioral of entity main_controller [main_controller_default]
+Compiling architecture behavior of entity bench6
+Time Resolution for simulation is 1ps.
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 24 VHDL Units
+Built simulation executable C:/Users/Sunidhi/Desktop/ElevatorControl/bench6_isim_beh.exe
+Fuse Memory Usage: 39720 KB
+Fuse CPU Usage: 1543 ms

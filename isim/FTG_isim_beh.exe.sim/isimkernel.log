@@ -1,0 +1,29 @@
+Command line:
+   FTG_isim_beh.exe
+     -simmode  gui
+     -simrunnum  6
+     -socket  55105
+
+Wed Mar 30 19:59:07 2016
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 195.903 Meg
+
+ Total Signals          : 12
+ Total Nets             : 38
+ Total Signal Drivers   : 6
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 1
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 416
+Total Line Count : 114
+
+ Total Simulation Time: 0.02 sec
+
+ Current Memory Usage: 271.405 Meg
+
+Wed Mar 30 19:59:15 2016
+

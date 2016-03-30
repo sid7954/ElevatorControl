@@ -2,9 +2,15 @@
 -- Company: 
 -- Engineer:
 --
+<<<<<<< HEAD
+-- Create Date:   22:04:23 03/29/2016
+-- Design Name:   
+-- Module Name:   /home/aviral/CS 254 Proj/ElevatorControl/bench3.vhd
+=======
 -- Create Date:   21:07:59 03/29/2016
 -- Design Name:   
 -- Module Name:   /home/aviral/CS 254 Proj/ElevatorControl/bench2.vhd
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 -- Project Name:  PROJECT
 -- Target Device:  
 -- Tool versions:  
@@ -62,6 +68,16 @@ ARCHITECTURE behavior OF bench2 IS
    signal fireAlarm : std_logic := '0';
    signal req : std_logic_vector(12 downto 0) := (others => '0');
    signal weight : std_logic_vector(8 downto 0) := (others => '0');
+<<<<<<< HEAD
+   signal floor_sensor : std_logic_vector(9 downto 0) := (others => '0');
+
+ 	--Outputs
+   signal currFloor : std_logic_vector(2 downto 0);
+   signal currDir : std_logic_vector(1 downto 0);
+   signal motorUp : std_logic;
+   signal motorDown : std_logic;
+   signal energy : std_logic_vector(9 downto 0);
+=======
    signal floor_sensor : std_logic_vector(9 downto 0);
 
 	--BiDirs
@@ -72,6 +88,7 @@ ARCHITECTURE behavior OF bench2 IS
    signal motorUp : std_logic:='0';
    signal motorDown : std_logic:='0';
    signal energy : std_logic_vector(9 downto 0):="0000000000";
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -108,6 +125,21 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+<<<<<<< HEAD
+		wait for clk_period*10;
+		reset<='1';
+		floor_sensor <="0000000011";
+      wait for clk_period*10;
+		reset<='0';
+		weight<="011111111";
+      wait for clk_period*20;
+		req <="0000000001000";
+		wait for clk_period*10;
+		floor_sensor<="0000001100";
+		wait for clk_period*10;
+		floor_sensor<="0000110000";
+		wait for clk_period*10;
+=======
 
       wait for clk_period*10;
 		reset<='1';
@@ -121,11 +153,21 @@ BEGIN
       wait for clk_period*20;
 		req <="0000000001000";
 		wait for clk_period*20;
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
 		floor_sensor <="0011000000";
 		wait for clk_period*20;
 		floor_sensor <="0000110000";
 		wait for clk_period*20;
+<<<<<<< HEAD
+		floor_sensor <="0000001100";	
+		
+      wait for clk_period*10;
+
+      -- insert stimulus here 
+
+=======
 		floor_sensor <="0000001100";		
+>>>>>>> 58897351fcd82c9fb4ee81280f1b12ace67e0868
       wait;
    end process;
 

@@ -1,0 +1,7 @@
+vhdl work "ipcore_dir/FIFO.vhd"
+vhdl work "motor_controller.vhd"
+vhdl work "Memory.vhd"
+vhdl work "FTG.vhd"
+vhdl work "Door_controller.vhd"
+vhdl work "main_controller.vhd"
+vhdl work "bench6.vhd"

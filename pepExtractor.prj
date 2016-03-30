@@ -1,0 +1,6 @@
+work	"Door_controller.vhd"
+work	"FTG.vhd"
+work	"Memory.vhd"
+work	"ipcore_dir/FIFO.vhd"
+work	"main_controller.vhd"
+work	"motor_controller.vhd"

@@ -1,0 +1,7 @@
+vhdl isim_temp "ipcore_dir/FIFO.vhd"
+vhdl isim_temp "motor_controller.vhd"
+vhdl isim_temp "Memory.vhd"
+vhdl isim_temp "FTG.vhd"
+vhdl isim_temp "Door_controller.vhd"
+vhdl isim_temp "main_controller.vhd"
+vhdl isim_temp "bench6.vhd"
